@@ -46,8 +46,19 @@ const updateUser = async (req, res) => {
     } catch (error) {
         console.log(error)
     }
+};
+const deleteUser = async (req, res) => {
+    try {
+        const { user } = req;
+        await user.update({ status: "deleted" })
+
+        res.status(204).json({ status: "success" })
 
 
+    } catch (error) {
+        console.log(error)
+
+    }
 
 }
 
@@ -57,6 +68,7 @@ module.exports = {
     createUser,
     getAllUsers,
     updateUser,
+    deleteUser,
 
 
 };

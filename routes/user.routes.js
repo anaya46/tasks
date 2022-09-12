@@ -11,6 +11,7 @@ const {
     createUser,
     getAllUsers,
     updateUser,
+    deleteUser,
 
 } = require("../controllers/user.controller");
 
@@ -18,5 +19,6 @@ const {
 usersRouter.post("/", createUserValidators, createUser);
 usersRouter.get("/", getAllUsers);
 usersRouter.patch("/:id", userExists, updateUser);
+usersRouter.delete("/:id", userExists, deleteUser);
 
 module.exports = { usersRouter }
