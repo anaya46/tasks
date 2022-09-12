@@ -32,11 +32,31 @@ const getAllUsers = async (req, res) => {
     }
 }
 
+const updateUser = async (req, res) => {
+    try {
+        const { name, email } = req.body;
+        const { user } = req;
+        await user.update({ name, email })
+
+        res.status(200).json({
+            status: "sucess",
+            data: { user }
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+
+
+
+}
+
 
 
 module.exports = {
     createUser,
     getAllUsers,
+    updateUser,
 
 
 };
