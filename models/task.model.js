@@ -1,4 +1,4 @@
-const { db, DataTypes } = require("../utils/database.utils")
+const { db, DataTypes } = require("../utils/database.util")
 
 const Task = db.define("task", {
     id: {

@@ -1,6 +1,7 @@
 const express = require("express");
 
 const { usersRouter } = require("./routes/user.routes");
+const { tasksRouter } = require("./routes/task.routes");
 
 const app = express();
 
@@ -8,6 +9,9 @@ app.use(express.json());
 
 
 app.use("/api/v1/users", usersRouter);
+app.use("/api/v1/tasks", tasksRouter);
+
+
 
 app.all("*", (req, res) => {
     res.status(404).json({
